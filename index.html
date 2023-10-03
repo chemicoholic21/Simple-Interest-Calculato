@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h2>Simple Interset Calculator</h2>
+        <label for="amount">Principal Amount</label>
+        <br>
+        <input type="number" placeholder="Enter Principal amount" id="amount">
+    <br>
+    <label for="rate"> Rate(%) </label>
+        <br>
+        <input type="number" placeholder="Enter rate" id="rate">
+    <br>
+    <label for="time">Time</label>
+        <br>
+        <input type="number" placeholder="Enter Time in years" id="time">
+    <br>
+    <button onclick="answer()">Calculate</button>
+    <p>Principal Amount:<span id="output_1"></span></p>
+    <p>Total Interest:<span id="output_2"></span></p>
+    <p>Total Value:<span id="output_3"></span></p>
+</div>
+    </div>
+    <script>
+        function answer(){
+            var amount = document.getElementById("amount").value;
+            var rate = document.getElementById("rate").value;
+            var time = document.getElementById("time").value;
+            var output_1 = document.getElementById("output_1");
+            var output_2 = document.getElementById("output_2");
+            var output_3 = document.getElementById("output_3");
+            var interest = (amount*rate*time)/100;
+            var total = parseInt(amount) + parseInt(interest);
+            output_1.innerHTML = amount;
+            output_2.innerHTML = interest;
+            output_3.innerHTML = total;
+        }
+    </script>
+</body>
+</html>
